@@ -1,0 +1,8 @@
+{
+  "name": "cpolo",
+  "version": "1.0.0",
+  "description": "CPOLO crypto project",
+  "main": "index.ts",
+  "author": "devpolo",
+  "license": "MIT"
+}
