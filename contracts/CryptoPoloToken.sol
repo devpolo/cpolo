@@ -8,6 +8,6 @@ contract CryptoPoloToken is ERC777 {
   constructor(uint256 initialSupply, address[] memory defaultOperators)
     ERC777("Crypto Polo Token", "CPOLO", defaultOperators)
   {
-    _mint(msg.sender, initialSupply, "", "");
+    _mint(msg.sender, initialSupply * (10**18), "", "");
   }
 }
