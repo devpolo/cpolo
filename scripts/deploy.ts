@@ -8,8 +8,6 @@ import * as dotenv from "dotenv"
 
 dotenv.config()
 
-const INITIAL_SUPPLY: number = parseInt(process.env.INITIAL_SUPPLY || "0")
-
 async function main() {
   // Hardhat always runs the compile task when running scripts with its command
   // line interface.
@@ -19,12 +17,12 @@ async function main() {
   // await hre.run('compile');
 
   // We get the contract to deploy
-  const CryptoPoloToken = await ethers.getContractFactory("CryptoPoloToken")
-  const cryptoPoloToken = await CryptoPoloToken.deploy(INITIAL_SUPPLY, [])
+  const Token = await ethers.getContractFactory("Token")
+  const token = await Token.deploy(1000000000, [])
 
-  await cryptoPoloToken.deployed()
+  await token.deployed()
 
-  console.log("CryptoPoloToken deployed to:", cryptoPoloToken.address)
+  console.log("Token deployed to:", token.address)
 }
 
 // We recommend this pattern to be able to use async/await everywhere
